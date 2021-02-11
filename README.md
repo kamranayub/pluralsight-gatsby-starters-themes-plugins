@@ -16,7 +16,7 @@ This repository is for the Pluralsight course **[Creating Plugins, Themes and St
 
 The course leverages some demo repositories which are maintained separately from this repository:
 
-- [Gatsby.js Starter Demo](https://github.com/kamranayub/pluralsight-gatsby-demo-starter) - The starter we build in the course, which is hosted on Gatsby Cloud and uses Contentful as the CMS
+- [Globomantics Starter Demo](https://github.com/kamranayub/pluralsight-gatsby-demo-starter) - The starter we build in the course, which is hosted on Gatsby Cloud and uses Contentful as the CMS
 - [Globomantics Glossary API](https://pluralsight-globomantics-glossary-api.netlify.app/glossary.json) - The "internal" API endpoint for the Glossary page and transformer plugin we build
 
 ## Errata
