@@ -7,9 +7,16 @@ This repository is for the Pluralsight course **[Creating Plugins, Themes and St
 
 ## Table of Contents
 
+1. [Where to Start](#where-to-start)
 1. [Errata](#errata)
 1. [Updates](#updates)
 1. [Additional Resources](#additional-resources)
+
+## Where to Start
+
+The course leverages some demo repositories which are maintained separately from this repository:
+
+- [Gatsby.js Starter Demo](https://github.com/kamranayub/pluralsight-gatsby-demo-starter) - The starter we build in the course, which is hosted on Gatsby Cloud and uses Contentful as the CMS
 
 ## Errata
 
