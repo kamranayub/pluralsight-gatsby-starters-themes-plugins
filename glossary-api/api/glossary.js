@@ -42,7 +42,7 @@ exports.handler = async function (event, context) {
   if (!event.queryStringParameters.apiKey) {
     return {
       statusCode: 400,
-      body: "Missing apiKey",
+      body: "Missing apiKey query string parameter",
     };
   }
 
