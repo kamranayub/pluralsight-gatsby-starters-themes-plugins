@@ -1,5 +1,18 @@
-const path = require("path");
-const readFile = require("util").promisify(require("fs").readFile);
+const api = {
+  glossary: [
+    {
+      abbreviation: "JAM",
+      name: "Just Another Mountain",
+      description:
+        "What we call big obstacles when paving the road to the future",
+    },
+    {
+      abbreviation: "MAATT",
+      name: "Much Ado About Time Travel",
+      description: "A codename for a secret project dealing with time travel",
+    },
+  ],
+};
 
 exports.handler = async function (event, context) {
   // Require API key
@@ -10,10 +23,8 @@ exports.handler = async function (event, context) {
     };
   }
 
-  const glossary = (await readFile(path.resolve("./glossary.json"))).toString();
-
   return {
     statusCode: 200,
-    body: glossary,
+    body: JSON.stringify(api, null, 2),
   };
 };
