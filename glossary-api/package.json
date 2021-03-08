@@ -1,0 +1,11 @@
+{
+  "name": "glossary-api",
+  "version": "1.0.0",
+  "description": "This is a sample JSON file which is statically served at an endpoint to act as an \"internal\" API endpoint to source data for the Gatsby source plugin.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
