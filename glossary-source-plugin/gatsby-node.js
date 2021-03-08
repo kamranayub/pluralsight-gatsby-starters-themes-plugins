@@ -19,22 +19,6 @@ exports.pluginOptionsSchema = ({ Joi }) =>
 exports.onPreInit = ({ reporter }) =>
   reporter.info("Initialized globomantics-glossary-source-plugin");
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  createTypes(`
-    """
-    Globomantics term in the organizational glossary, sourced from our
-    Glossary API
-    """
-    type GlossaryTerm implements Node {
-      id: ID!
-      abbreviation: String!
-      name: String!
-      description: String!
-      orgOwner: String
-    }`);
-};
-
 exports.sourceNodes = async (
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
