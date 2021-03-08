@@ -1,5 +1,5 @@
 {
-  "name": "globomantics-glossary-source-plugin",
+  "name": "gatsby-source-globomantics-glossary",
   "version": "1.0.0",
   "description": "A sample source plugin for the Globomantics Glossary API",
   "main": "index.js",

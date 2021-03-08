@@ -21,11 +21,10 @@ exports.sourceNodes = async (
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
 ) => {
+  const { createNode } = actions;
   const { apiKey } = pluginOptions;
   const response = await fetch(`${GLOSSARY_ENDPOINT_URL}?apiKey=${apiKey}`);
-  const terms = await response.json();
-
-  const { createNode } = actions;
+  const { glossary: terms } = await response.json();
 
   terms.forEach((term) => {
     createNode({
