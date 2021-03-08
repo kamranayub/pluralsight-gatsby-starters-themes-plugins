@@ -1,3 +1,4 @@
+const path = require("path");
 const readFile = require("util").promisify(require("fs").readFile);
 
 exports.handler = async function (event, context) {
@@ -9,7 +10,7 @@ exports.handler = async function (event, context) {
     };
   }
 
-  const glossary = (await readFile("./glossary.json")).toString();
+  const glossary = (await readFile(path.resolve("./glossary.json"))).toString();
 
   return {
     statusCode: 200,
