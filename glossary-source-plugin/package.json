@@ -1,8 +1,12 @@
 {
-  "name": "gatsby-source-globomantics-glossary",
-  "version": "1.0.0",
+  "name": "@kamranayub/gatsby-source-globomantics-glossary",
+  "version": "0.1.0-initial",
   "description": "A sample source plugin for the Globomantics Glossary API",
   "main": "index.js",
+  "repository": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
