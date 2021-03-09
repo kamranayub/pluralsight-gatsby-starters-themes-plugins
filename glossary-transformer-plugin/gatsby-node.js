@@ -43,7 +43,7 @@ exports.onCreateNode = async ({
       const termMatches = [...content.matchAll(termMatcher)];
 
       if (termMatches.length) {
-        return { abbreviation: term.abbreviation, count: termMatches.length };
+        return { term___NODE: term.id, count: termMatches.length };
       } else {
         return false;
       }
