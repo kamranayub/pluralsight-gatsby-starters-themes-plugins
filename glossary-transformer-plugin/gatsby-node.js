@@ -22,11 +22,10 @@ exports.onCreateNode = async ({
   createNodeId,
   createContentDigest,
   getNodesByType,
-  getNode,
   reporter,
 }) => {
   // Only transform Contentful blog posts
-  if (node.internal.type !== `ContentfulBlogPost`) {
+  if (node.internal.type !== `contentfulBlogPostBodyTextNode`) {
     return;
   }
 
@@ -36,7 +35,7 @@ exports.onCreateNode = async ({
   const terms = getNodesByType("GlossaryTerm");
 
   // Find matching abbreviations in the blog post content body
-  const content = getNode(node.body___NODE).body;
+  const content = node.body;
   const matches = terms
     .map((term) => {
       const termMatcher = new RegExp(`\\W${term.abbreviation}\\W`, "g");
@@ -73,6 +72,6 @@ exports.onCreateNode = async ({
   );
 
   reporter.info(
-    `Linked ${matches.length} ${GLOSSARY_REFS_NODE_TYPE} to ContentfulBlogPost ${node.id}`
+    `Linked ${matches.length} ${GLOSSARY_REFS_NODE_TYPE} to contentfulBlogPostBodyTextNode ${node.id}`
   );
 };
