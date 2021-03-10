@@ -20,11 +20,16 @@ exports.onPreInit = ({ reporter }) =>
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   createTypes(`
+    """
+    Globomantics term in the organizational glossary, sourced from our
+    Glossary API
+    """
     type GlossaryTerm implements Node {
       id: ID!
       abbreviation: String!
       name: String!
       description: String!
+      orgOwner: String
     }`);
 };
 
