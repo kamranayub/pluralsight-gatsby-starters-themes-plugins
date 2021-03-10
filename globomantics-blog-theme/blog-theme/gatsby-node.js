@@ -1,9 +1,7 @@
-const config = require("./gatsby-config");
-
 /**
  * Override core pages created by Gatsby from /pages directory
  */
-exports.onCreatePage = ({ page, actions }) => {
+exports.onCreatePage = ({ page, actions }, { authorId }) => {
   const { createPage, deletePage } = actions;
 
   deletePage(page);
@@ -13,7 +11,7 @@ exports.onCreatePage = ({ page, actions }) => {
       ...page.context,
 
       // authorId will now be passed as $authorId to GraphQL query arguments
-      authorId: config.siteMetadata.authorId,
+      authorId,
     },
   });
 };

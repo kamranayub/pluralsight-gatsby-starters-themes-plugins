@@ -34,14 +34,12 @@ if (!spaceId || !accessToken) {
   );
 }
 
-const authorId = "15jwOBqpxqSAOy2eOO4S0m"; // YL4ATa1RwAn9uZqw29KU7 
-
-module.exports = {
+module.exports = ({ authorId, title = "Globomantics Engineering Blog", pathPrefix }) => ({
   siteMetadata: {
-    title: "Globomantics Engineering",
-    authorId
+    title,
+    authorId,
   },
-  pathPrefix: "/gatsby-contentful-starter",
+  pathPrefix,
   plugins: [
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
@@ -49,7 +47,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     {
       resolve: require.resolve("./src/plugins/blog-posts"),
-      options: { authorId }
+      options: { authorId },
     },
     {
       resolve: "@kamranayub/gatsby-source-globomantics-glossary",
@@ -63,4 +61,4 @@ module.exports = {
     },
     "@kamranayub/gatsby-transformer-globomantics-glossary",
   ],
-};
+});
