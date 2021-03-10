@@ -17,6 +17,17 @@ exports.pluginOptionsSchema = ({ Joi }) =>
 exports.onPreInit = ({ reporter }) =>
   reporter.info("Initialized globomantics-glossary-source-plugin");
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  createTypes(`
+    type GlossaryTerm implements Node {
+      id: ID!
+      abbreviation: String!
+      name: String!
+      description: String!
+    }`);
+};
+
 exports.sourceNodes = async (
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
