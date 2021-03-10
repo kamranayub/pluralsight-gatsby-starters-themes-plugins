@@ -2,15 +2,16 @@
   "name": "example",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build"
   },
   "dependencies": {
+    "@kamranayub/globomantics-blog-theme": "^1.0.0",
     "gatsby": "^2.32.9",
-    "gatsby-theme-minimal": "^1.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }

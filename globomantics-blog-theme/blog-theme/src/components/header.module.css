@@ -1,0 +1,100 @@
+.wrapper {
+  background: black;
+  padding-top: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+    flex: 0 1;
+    margin: 30px 0;
+  }
+
+.logo img {
+  height: 35px;
+  width: 220px;
+  border-right: 1px solid #bdfef2;
+  padding-right: 12px;
+}
+  
+.tagline {
+    color: #bdfef2;
+    font-size: 12px;
+    padding-left: 12px;
+    font-style: italic;
+  }
+
+.middle {
+  flex: 1;
+}
+
+.search {
+  float: right;
+  margin-right: 1em;
+}
+
+.search button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search button i {
+  color: #bdfef2;
+  position: absolute;
+  margin: 16px 12px;
+  cursor: pointer;
+}
+
+.search input {
+  box-sizing: border-box;
+  width: 228px;
+  padding: 6px 12px;
+  padding-left: 30px;
+  background: #fff0;
+  border-radius: 40px;
+  display: block;
+  height: 34px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  border: 1px solid #ccc;
+}
+
+.navigation {
+  float: right;
+  clear: right;
+  padding: 1em 0;
+}
+
+.end {
+  flex: 0 1;
+  display: flex;
+}
+
+.divider {
+  height: 90px;
+  border: 1px solid #BDFEF2;
+  margin: 0px 40px;
+  display: inline-block;
+}
+
+.signInButton {
+  margin: 30px 0;
+}
+
+.signInButton img {
+  margin-left: 6px;
+  width: 32px;
+  height: 32px;
+}
+
+.signInButton a {
+  color: #BDFEF2;
+  text-decoration: none;
+  white-space: nowrap;
+}

@@ -5,10 +5,11 @@
   "main": "index.js",
   "license": "0BSD",
   "scripts": {
+    "dev": "yarn workspace example dev",
     "build": "yarn workspace example build"
   },
   "workspaces": [
-    "gatsby-theme-minimal",
+    "blog-theme",
     "example"
   ]
 }
