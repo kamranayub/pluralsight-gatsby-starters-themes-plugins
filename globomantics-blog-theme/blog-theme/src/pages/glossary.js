@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import styles from "./glossary.module.css";
 import Head from "../components/head";
-import Layout from "../components/layout";
 
 class GlossaryIndex extends React.Component {
   render() {
@@ -11,7 +10,6 @@ class GlossaryIndex extends React.Component {
     const terms = get(this, "props.data.glossary.terms");
 
     return (
-      <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
           <Head title={siteTitle} />
           <div className={styles.hero}>Glossary</div>
@@ -28,7 +26,6 @@ class GlossaryIndex extends React.Component {
             </ul>
           </div>
         </div>
-      </Layout>
     );
   }
 }
