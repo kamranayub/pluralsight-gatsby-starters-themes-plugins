@@ -26,8 +26,12 @@ const SignInButton = () => (
   </div>
 );
 
-export default ({ tagline = "ENGINEERING BLOGS", children }) => (
-  <div className={styles.wrapper}>
+export default ({
+  tagline = "ENGINEERING BLOGS",
+  className = "",
+  children,
+}) => (
+  <div className={`${styles.wrapper} ${className}`}>
     <Container className={styles.header}>
       <Link to="/" className={styles.logo}>
         <img src={logo} alt="logo" />
