@@ -5,6 +5,17 @@ exports.wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>;
 };
 
-exports.onRenderBody = ({ setHeadComponents }, { authorId }) => {
-  setHeadComponents([<meta key="author" name="author" content={authorId} />]);
+exports.onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <meta
+      key="keywords"
+      name="keywords"
+      content="blog,globomantics,gatsby,robotics,future,ai,machine learning"
+    />,
+    <meta
+      key="description"
+      name="description"
+      content="Blogs from Globomantics employees on technology and other topics"
+    />,
+  ]);
 };
