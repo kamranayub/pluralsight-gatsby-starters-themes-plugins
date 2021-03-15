@@ -36,14 +36,27 @@ exports.createSchemaCustomization = ({ actions }) => {
 };
 
 exports.sourceNodes = async (
-  { actions, reporter, createNodeId, createContentDigest },
+  { actions, reporter, createNodeId, createContentDigest, cache },
   pluginOptions
 ) => {
-  const { createNode } = actions;
   const { apiKey } = pluginOptions;
-  const response = await fetch(`${exports.endPointUrl}?apiKey=${apiKey}`);
-  const { glossary: terms } = await response.json();
 
+  const cacheKey = `${GLOSSARY_NODE_TYPE}-${apiKey}-Terms`;
+  const cachedTerms = await cache.get(cacheKey);
+  let terms;
+
+  if (cachedTerms) {
+    terms = cachedTerms;
+  } else {
+    const response = await fetch(`${exports.endPointUrl}?apiKey=${apiKey}`);
+    const { glossary } = await response.json();
+
+    terms = glossary;
+
+    await cache.set(cacheKey, terms);
+  }
+  
+  const { createNode } = actions;
   terms.forEach((term) => {
     createNode({
       ...term,
