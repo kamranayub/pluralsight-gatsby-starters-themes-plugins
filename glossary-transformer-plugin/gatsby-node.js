@@ -29,14 +29,12 @@ exports.onCreateNode = async ({
     return;
   }
 
-  const { createNode, createParentChildLink } = actions;
-
   // Get available Glossary terms created by glossary source plugin
   const terms = getNodesByType("GlossaryTerm");
 
   // Find matching abbreviations in the blog post content body
   const content = node.body;
-  const matches = terms
+  const termReferences = terms
     .map((term) => {
       const termMatcher = new RegExp(`\\W${term.abbreviation}\\W`, "g");
       const termMatches = [...content.matchAll(termMatcher)];
@@ -49,29 +47,21 @@ exports.onCreateNode = async ({
     })
     .filter(Boolean);
 
-  function transformContentfulBlogPost(terms, id, type) {
-    const termRefsNode = {
-      terms,
-      id,
-      children: [],
-      parent: node.id,
-      internal: {
-        contentDigest: createContentDigest(terms),
-        type,
-      },
-    };
-    createNode(termRefsNode);
-    createParentChildLink({ parent: node, child: termRefsNode });
-  }
+  const { createNode, createParentChildLink } = actions;
 
-  // Create refs node to store any term matches
-  transformContentfulBlogPost(
-    matches,
-    createNodeId(`${node.id} ${GLOSSARY_REFS_NODE_TYPE}`),
-    GLOSSARY_REFS_NODE_TYPE
-  );
+  // Associate term references to blog post text node
+  const termReferencesNode = {
+    id: createNodeId(`${node.id} ${GLOSSARY_REFS_NODE_TYPE}`),
+    terms: termReferences,
+    internal: {
+      contentDigest: createContentDigest(termReferences),
+      type: GLOSSARY_REFS_NODE_TYPE,
+    },
+  };
+  createNode(termReferencesNode);
+  createParentChildLink({ parent: node, child: termReferencesNode });
 
   reporter.info(
-    `Linked ${matches.length} ${GLOSSARY_REFS_NODE_TYPE} to contentfulBlogPostBodyTextNode ${node.id}`
+    `Linked ${termReferences.length} ${GLOSSARY_REFS_NODE_TYPE} to contentfulBlogPostBodyTextNode ${node.id}`
   );
 };
