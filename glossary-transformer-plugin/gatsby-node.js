@@ -14,8 +14,6 @@
 exports.onPreInit = ({ reporter }) =>
   reporter.info("Initialized gatsby-transformer-globomantics-glossary");
 
-const GLOSSARY_REFS_NODE_TYPE = "GlossaryTermRefs";
-
 exports.onCreateNode = async ({
   actions,
   node,
@@ -47,9 +45,8 @@ exports.onCreateNode = async ({
     })
     .filter(Boolean);
 
-  const { createNode, createParentChildLink } = actions;
-
   // Associate term references to blog post text node
+  const GLOSSARY_REFS_NODE_TYPE = "GlossaryTermRefs";
   const termReferencesNode = {
     id: createNodeId(`${node.id} ${GLOSSARY_REFS_NODE_TYPE}`),
     terms: termReferences,
@@ -58,6 +55,8 @@ exports.onCreateNode = async ({
       type: GLOSSARY_REFS_NODE_TYPE,
     },
   };
+
+  const { createNode, createParentChildLink } = actions;
   createNode(termReferencesNode);
   createParentChildLink({ parent: node, child: termReferencesNode });
 
