@@ -10,7 +10,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@kamranayub/globomantics-blog-theme": "^1.0.0",
+    "@kamranayub/gatsby-theme-globomantics-blog": "^1.0.0",
     "gatsby": "^2.32.9",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
