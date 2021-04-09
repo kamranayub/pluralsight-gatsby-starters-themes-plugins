@@ -42,13 +42,7 @@
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "heroku-postbuild": "gatsby build",
-    "serve": "gatsby serve",
     "postinstall": "node ./bin/hello.js",
-    "setup": "node ./bin/setup.js",
-    "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "setup": "node ./bin/setup.js"
   }
 }
