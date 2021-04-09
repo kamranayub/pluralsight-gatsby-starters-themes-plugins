@@ -1,5 +1,5 @@
 {
-  "name": "@kamranayub/globomantics-blog-theme",
+  "name": "@kamranayub/gatsby-theme-globomantics-blog",
   "description": "Globomantics Gatsby Blog Theme",
   "version": "1.0.0",
   "author": "Kamran Ayub (@kamranayub)",
@@ -27,28 +27,17 @@
     "netlify-cli": "^2.54.0"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=14"
   },
-  "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
+  "homepage": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins#readme",
   "keywords": [
     "gatsby",
-    "contentful",
-    "starter"
+    "gatsby-plugin",
+    "gatsby-theme"
   ],
   "license": "MIT",
-  "main": "n/a",
+  "main": "index.js",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
-  },
-  "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "heroku-postbuild": "gatsby build",
-    "serve": "gatsby serve",
-    "postinstall": "node ./bin/hello.js",
-    "setup": "node ./bin/setup.js",
-    "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "url": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins"
   }
 }
