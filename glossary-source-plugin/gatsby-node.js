@@ -9,6 +9,8 @@ const GLOSSARY_NODE_TYPE = `GlossaryTerm`;
 const GLOSSARY_ENDPOINT_URL =
   "https://pluralsight-globomantics-glossary-api.netlify.app/.netlify/functions/glossary";
 
+exports.endPointUrl = GLOSSARY_ENDPOINT_URL;
+
 exports.pluginOptionsSchema = ({ Joi }) =>
   Joi.object({
     apiKey: Joi.string().required(),
@@ -39,7 +41,7 @@ exports.sourceNodes = async (
 ) => {
   const { createNode } = actions;
   const { apiKey } = pluginOptions;
-  const response = await fetch(`${GLOSSARY_ENDPOINT_URL}?apiKey=${apiKey}`);
+  const response = await fetch(`${exports.endPointUrl}?apiKey=${apiKey}`);
   const { glossary: terms } = await response.json();
 
   terms.forEach((term) => {
