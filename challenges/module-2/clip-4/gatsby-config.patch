@@ -1,0 +1,22 @@
+diff --git a/gatsby-config.js b/gatsby-config.js
+index 224ce72..66122fc 100644
+--- a/gatsby-config.js
++++ b/gatsby-config.js
+@@ -34,10 +34,16 @@ if (!spaceId || !accessToken) {
+   );
+ }
+ 
++if (!process.env.CONTENTFUL_AUTHOR_ID) {
++  throw new Error(
++    "Contentful author ID needs to be provided to filter blog posts in queries."
++  )
++}
++
+ module.exports = {
+   siteMetadata: {
+     title: "Globomantics Engineering",
+-    authorId: "15jwOBqpxqSAOy2eOO4S0m" // YL4ATa1RwAn9uZqw29KU7 
++    authorId: process.env.CONTENTFUL_AUTHOR_ID
+   },
+   pathPrefix: "/gatsby-contentful-starter",
+   plugins: [
