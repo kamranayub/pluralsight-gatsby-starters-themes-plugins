@@ -1,0 +1,13 @@
+diff --git a/src/plugins/blog-posts/gatsby-node.js b/src/plugins/blog-posts/gatsby-node.js
+index 3517569..6b83792 100644
+--- a/src/plugins/blog-posts/gatsby-node.js
++++ b/src/plugins/blog-posts/gatsby-node.js
+@@ -4,7 +4,7 @@
+ exports.pluginOptionsSchema = ({ Joi }) =>
+   Joi.object({
+     authorId: Joi.string().required(),
+-    blogPathPrefix: Joi.string(),
++    blogPathPrefix: Joi.string().pattern(/^\/[^\/]*$/, "no ending slash"),
+   });
+ 
+ exports.onPreInit = ({ reporter }) =>
