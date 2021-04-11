@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const { sourceNodes } = require("../gatsby-node");
+const { sourceNodes } = require("./gatsby-node");
 
 jest.mock("node-fetch");
 
@@ -25,11 +25,15 @@ describe("gatsby-node: onSourceNode", () => {
       name: "A test",
       description: "Just a test",
     };
-    fetch.mockImplementation(() => ({
-      json: Promise.resolve({
-        glossary: [testTerm],
-      }),
-    }));
+    fetch.mockImplementation(() =>
+      Promise.resolve({
+        json() {
+          return Promise.resolve({
+            glossary: [testTerm],
+          });
+        },
+      })
+    );
 
     await sourceNodes(mockHelpers, { apiKey: "test" });
 
