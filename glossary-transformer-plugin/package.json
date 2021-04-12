@@ -1,6 +1,6 @@
 {
   "name": "@kamranayub/gatsby-transformer-globomantics-glossary",
-  "version": "0.1.0-pr-3.2",
+  "version": "0.1.0-pr-3.3",
   "description": "A demo transformer plugin for the Globomantics Glossary API that links up terms used in blog posts",
   "main": "index.js",
   "repository": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins",
@@ -15,5 +15,6 @@
     "gatsby-plugin"
   ],
   "author": "Kamran Ayub",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {}
 }

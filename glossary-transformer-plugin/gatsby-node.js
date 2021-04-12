@@ -64,3 +64,18 @@ exports.onCreateNode = async ({
     `Linked ${termReferences.length} ${GLOSSARY_REFS_NODE_TYPE} to contentfulBlogPostBodyTextNode ${node.id}`
   );
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type GlossaryTermRefs implements Node {
+      terms: [GlossaryTermRef!]
+    }
+
+    type GlossaryTermRef {
+      term: GlossaryTerm!
+      count: Int!
+    }
+  `);
+};
