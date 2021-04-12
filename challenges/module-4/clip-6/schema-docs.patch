@@ -1,0 +1,35 @@
+diff --git a/glossary-source-plugin/gatsby-node.js b/glossary-source-plugin/gatsby-node.js
+index f3902e4..ae6999b 100644
+--- a/glossary-source-plugin/gatsby-node.js
++++ b/glossary-source-plugin/gatsby-node.js
+@@ -27,10 +27,30 @@ exports.createSchemaCustomization = ({ actions }) => {
+     Glossary API
+     """
+     type GlossaryTerm implements Node {
++
++      """
++      A unique GraphQL ID for the node
++      """
+       id: ID!
++
++      """
++      The term's abbreviation (e.g. HTTP)
++      """
+       abbreviation: String!
++
++      """
++      The term's longer name (e.g. Hyper Text Markup Language)
++      """
+       name: String!
++
++      """
++      A long description about the term
++      """
+       description: String!
++
++      """
++      The organization that originated the term (e.g. Marketing, Engineering, etc.)
++      """
+       orgOwner: String
+     }`);
+ };
