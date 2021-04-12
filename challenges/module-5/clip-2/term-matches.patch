@@ -1,0 +1,19 @@
+diff --git a/glossary-transformer-plugin/gatsby-node.js b/glossary-transformer-plugin/gatsby-node.js
+index 37ff529..98b3139 100644
+--- a/glossary-transformer-plugin/gatsby-node.js
++++ b/glossary-transformer-plugin/gatsby-node.js
+@@ -38,7 +38,13 @@ exports.onCreateNode = async ({
+       const termMatches = [...content.matchAll(termMatcher)];
+ 
+       if (termMatches.length) {
+-        return { term___NODE: term.id, count: termMatches.length };
++        return {
++          term___NODE: term.id,
++          matches: termMatches.map((match) => ({
++            start: match.index,
++            end: match.lastIndex,
++          })),
++        };
+       } else {
+         return false;
+       }

@@ -1,0 +1,92 @@
+diff --git a/src/pages/glossary.js b/src/pages/glossary.js
+index cefd109..3b5b797 100644
+--- a/src/pages/glossary.js
++++ b/src/pages/glossary.js
+@@ -1,14 +1,39 @@
+ import React from "react";
+-import { graphql } from "gatsby";
++import { graphql, Link } from "gatsby";
+ import get from "lodash/get";
+ import styles from "./glossary.module.css";
+ import Head from "../components/head";
+ import Layout from "../components/layout";
++import { keyBy, mapValues } from "lodash";
+ 
+ class GlossaryIndex extends React.Component {
+   render() {
+     const siteTitle = get(this, "props.data.site.siteMetadata.title");
+     const terms = get(this, "props.data.glossary.terms");
++    const posts = get(
++      this,
++      "props.data.allContentfulBlogPostBodyTextNode.edges"
++    );
++    const postsBySlug = keyBy(posts, "node.parent.slug");
++
++    const postsToTermsLookup = mapValues(
++      postsBySlug,
++      "node.childGlossaryTermRefs.terms"
++    );
++
++    const termsToPostLookup = {};
++
++    for (const [slug, termRefs] of Object.entries(postsToTermsLookup)) {
++      for (const {
++        term: { abbreviation },
++      } of termRefs) {
++        if (termsToPostLookup[abbreviation]) {
++          termsToPostLookup[abbreviation].push(slug);
++        } else {
++          termsToPostLookup[abbreviation] = [slug];
++        }
++      }
++    }
+ 
+     return (
+       <Layout location={this.props.location}>
+@@ -22,6 +47,21 @@ class GlossaryIndex extends React.Component {
+                   <li key={term.abbreviation}>
+                     <strong>{term.abbreviation}</strong> ({term.name}) &mdash;{" "}
+                     {term.description}
++                    {termsToPostLookup[term.abbreviation] ? (
++                      <>
++                        {" "}
++                        (Referenced in:{" "}
++                        {termsToPostLookup[term.abbreviation].map((post, index) => (
++                          <React.Fragment key={post}>
++                            <Link to={`/blog/${post}`}>
++                              {postsBySlug[post].node.parent.title}
++                            </Link>
++                            {termsToPostLookup[term.abbreviation][index + 1] ? ", " : null}
++                          </React.Fragment>
++                        ))}
++                        )
++                      </>
++                    ) : null}
+                   </li>
+                 );
+               })}
+@@ -46,5 +86,24 @@ export const pageQuery = graphql`
+         }
+       }
+     }
++    allContentfulBlogPostBodyTextNode {
++      edges {
++        node {
++          childGlossaryTermRefs {
++            terms {
++              term {
++                abbreviation
++              }
++            }
++          }
++          parent {
++            ... on ContentfulBlogPost {
++              title
++              slug
++            }
++          }
++        }
++      }
++    }
+   }
+ `;
