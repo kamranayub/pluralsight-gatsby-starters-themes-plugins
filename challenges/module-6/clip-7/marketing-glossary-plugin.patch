@@ -1,0 +1,42 @@
+diff --git a/marketing-glossary-plugin.patch b/marketing-glossary-plugin.patch
+new file mode 100644
+index 0000000..e69de29
+diff --git a/plugins/@kamranayub/gatsby-source-globomantics-glossary/gatsby-node.js b/plugins/@kamranayub/gatsby-source-globomantics-glossary/gatsby-node.js
+new file mode 100644
+index 0000000..f92ff96
+--- /dev/null
++++ b/plugins/@kamranayub/gatsby-source-globomantics-glossary/gatsby-node.js
+@@ -0,0 +1,14 @@
++const gatsbyNode = require("@kamranayub/gatsby-source-globomantics-glossary/gatsby-node");
++
++//
++// WARNING: This is not a pattern you want to really do
++// but it does showcase how flexible/powerful Gatsby can be
++// when you want to override behavior
++//
++gatsbyNode.endPointUrl =
++  "https://pluralsight-globomantics-glossary-api.netlify.app/.netlify/functions/glossary-marketing";
++
++module.exports = {
++  ...gatsbyNode,
++  onPreInit: ({ reporter }) => reporter.info("Initialized marketing-glossary"),
++};
+diff --git a/plugins/@kamranayub/gatsby-source-globomantics-glossary/index.js b/plugins/@kamranayub/gatsby-source-globomantics-glossary/index.js
+new file mode 100644
+index 0000000..a0396fc
+--- /dev/null
++++ b/plugins/@kamranayub/gatsby-source-globomantics-glossary/index.js
+@@ -0,0 +1 @@
++// no-op
+\ No newline at end of file
+diff --git a/plugins/@kamranayub/gatsby-source-globomantics-glossary/package.json b/plugins/@kamranayub/gatsby-source-globomantics-glossary/package.json
+new file mode 100644
+index 0000000..3f82f62
+--- /dev/null
++++ b/plugins/@kamranayub/gatsby-source-globomantics-glossary/package.json
+@@ -0,0 +1,5 @@
++{
++  "name": "@kamranayub/gatsby-source-globomantics-glossary",
++  "version": "0.0.0-dev",
++  "private": true
++}

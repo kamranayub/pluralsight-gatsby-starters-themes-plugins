@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Container from './container'
 import Navigation from './navigation'
-import styles from './header.module.css'
+import * as styles from './header.module.css'
 import logo from './logo.svg'
 import avatar from './avatar.svg'
 

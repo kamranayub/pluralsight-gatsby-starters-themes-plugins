@@ -1,0 +1,24 @@
+diff --git a/plugins/meta-plugin/gatsby-node.js b/plugins/meta-plugin/gatsby-node.js
+index 5f92c74..4b224a5 100644
+--- a/plugins/meta-plugin/gatsby-node.js
++++ b/plugins/meta-plugin/gatsby-node.js
+@@ -6,7 +6,7 @@ const exec = util.promisify(require("child_process").exec);
+ exports.onPostBuild = async ({ graphql, reporter }) => {
+   const { stdout: sha } = await exec("git rev-parse HEAD");
+   const branch = process.env.BRANCH;
+-  
++
+   const { data } = await graphql(`
+     {
+       siteBuildMetadata {
+@@ -19,6 +19,10 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
+     sha: sha?.trim(),
+     branch,
+     buildTime: data.siteBuildMetadata.buildTime,
++    contentfulConfig: {
++      spaceId: process.env.CONTENTFUL_SPACE_ID,
++      authorId: process.env.CONTENTFUL_AUTHOR_ID,
++    },
+   };
+ 
+   await writeFile(

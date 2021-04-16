@@ -1,9 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 import get from "lodash/get";
-import styles from "./glossary.module.css";
 import Head from "../components/head";
 import Layout from "../components/layout";
+
+import { hero, glossaryList } from "./glossary.module.css";
 
 class GlossaryIndex extends React.Component {
   render() {
@@ -14,9 +15,9 @@ class GlossaryIndex extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
           <Head title={siteTitle} />
-          <div className={styles.hero}>Glossary</div>
+          <div className={hero}>Glossary</div>
           <div className="wrapper">
-            <ul className={styles.glossaryList}>
+            <ul className={glossaryList}>
               {terms.map(({ term }) => {
                 return (
                   <li key={term.abbreviation}>

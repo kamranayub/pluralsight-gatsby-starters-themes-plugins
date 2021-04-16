@@ -3,12 +3,12 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import sortBy from "lodash/sortBy";
 import reverse from "lodash/reverse";
-import Img from "gatsby-image";
-import Head from '../../../components/head'
-import Layout from '../../../components/layout'
+import { GatsbyImage } from "gatsby-plugin-image";
+import Head from "../../../components/head";
+import Layout from "../../../components/layout";
 
-import styles from './blog-post.module.css';
-import heroStyles from '../../../components/hero.module.css'
+import { glossary } from "./blog-post.module.css";
+import * as heroStyles from "../../../components/hero.module.css";
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -20,23 +20,24 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div style={{ background: "#fff" }}>
           <Head title={`${post.title} | ${siteTitle}`} />
           <div className={heroStyles.hero}>
-            <Img
+            <GatsbyImage
+              image={post.heroImage.gatsbyImageData}
               className={heroStyles.heroImage}
               alt={post.title}
-              fluid={post.heroImage.fluid}
             />
           </div>
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
             <p
               style={{
-                display: 'block',
+                display: "block",
               }}
             >
-              published {post.publishDate} by <strong>{post.author.name}</strong>
+              published {post.publishDate} by{" "}
+              <strong>{post.author.name}</strong>
             </p>
             <div
               dangerouslySetInnerHTML={{
@@ -45,24 +46,24 @@ class BlogPostTemplate extends React.Component {
             />
             <hr />
             <h3>Glossary</h3>
-            <dl class={styles.glossary}>
+            <dl className={glossary}>
               {terms.map(({ term }) => (
-                <>
+                <React.Fragment key={term.abbreviation}>
                   <dt>
                     {term.abbreviation} ({term.name})
                   </dt>
                   <dd>{term.description}</dd>
-                </>
+                </React.Fragment>
               ))}
             </dl>
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -75,9 +76,11 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          width: 1180
+          backgroundColor: "rgb:000000"
+        )
       }
       body {
         childMarkdownRemark {
@@ -88,8 +91,8 @@ export const pageQuery = graphql`
             count
             term {
               abbreviation
-              name
               description
+              name
             }
           }
         }
@@ -99,4 +102,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

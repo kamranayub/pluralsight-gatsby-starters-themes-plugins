@@ -1,0 +1,59 @@
+diff --git a/src/pages/glossary.js b/src/pages/glossary.js
+index cefd109..3c8d1a6 100644
+--- a/src/pages/glossary.js
++++ b/src/pages/glossary.js
+@@ -20,8 +20,8 @@ class GlossaryIndex extends React.Component {
+               {terms.map(({ term }) => {
+                 return (
+                   <li key={term.abbreviation}>
+-                    <strong>{term.abbreviation}</strong> ({term.name}) &mdash;{" "}
+-                    {term.description}
++                    <h4>{term.abbreviation} <small>{term.name}</small></h4>
++                    <p>{term.description}</p>
+                   </li>
+                 );
+               })}
+diff --git a/src/pages/glossary.module.css b/src/pages/glossary.module.css
+index 7cba15a..9f88ec7 100644
+--- a/src/pages/glossary.module.css
++++ b/src/pages/glossary.module.css
+@@ -13,12 +13,35 @@
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
++  display: grid;
++  grid-template-columns: 1fr 1fr 1fr;
++  column-gap: 32px;
++  row-gap: 32px;
++}
++
++.glossary-list li h4 {
++  color: purple;
++  font-size: 1.2em;
++  padding: 12px;
++  margin: 0;
++}
++
++.glossary-list li h4 small {
++  color: rgb(77, 77, 77);
++  font-size: 0.8em;
++  font-weight: normal;
++  margin-left: 6px;
+ }
+ 
+ .glossary-list li {
+-  margin-bottom: 1em;
++  border: 1px solid rgb(207, 207, 207);
++  border-radius: 15px;
+ }
+ 
+-.glossary-list li strong {
+-  color: purple;
++.glossary-list li p {
++  border-top: 1px solid rgb(207, 207, 207);
++  padding-top: 12px;
++  color: rgb(56, 56, 56);
++  margin: 0;
++  padding: 12px;
+ }
+\ No newline at end of file

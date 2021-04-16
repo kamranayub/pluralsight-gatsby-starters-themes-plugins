@@ -44,6 +44,7 @@ module.exports = ({ authorId, title = "Globomantics Engineering Blog", pathPrefi
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
       resolve: require.resolve("./src/plugins/blog-posts"),
@@ -60,5 +61,6 @@ module.exports = ({ authorId, title = "Globomantics Engineering Blog", pathPrefi
       options: contentfulConfig,
     },
     "@kamranayub/gatsby-transformer-globomantics-glossary",
+    { resolve: require.resolve("./plugins/meta-plugin") },
   ],
 });
