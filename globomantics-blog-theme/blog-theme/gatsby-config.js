@@ -63,6 +63,6 @@ module.exports = {
       options: contentfulConfig,
     },
     "@kamranayub/gatsby-transformer-globomantics-glossary",
-    "meta-plugin",
+    { resolve: require.resolve("./plugins/meta-plugin") },
   ],
 };
