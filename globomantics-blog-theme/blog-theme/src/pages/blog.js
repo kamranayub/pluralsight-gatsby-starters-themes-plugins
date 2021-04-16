@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import styles from './blog.module.css'
+import * as styles from './blog.module.css'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
@@ -49,9 +49,12 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(
+              resizingBehavior: SCALE
+              height: 196
+              width: 350
+              layout: FULL_WIDTH
+            )
           }
           description {
             childMarkdownRemark {
