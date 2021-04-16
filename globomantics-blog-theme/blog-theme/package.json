@@ -1,7 +1,7 @@
 {
   "name": "@kamranayub/gatsby-theme-globomantics-blog",
   "description": "Globomantics Gatsby Blog Theme",
-  "version": "1.0.0",
+  "version": "1.0.0-pr-8.1",
   "author": "Kamran Ayub (@kamranayub)",
   "bugs": {
     "url": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins/issues"
@@ -32,11 +32,14 @@
   "homepage": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins#readme",
   "keywords": [
     "gatsby",
-    "gatsby-plugin",
-    "gatsby-theme"
+    "gatsby-theme",
+    "gatsby-plugin"
   ],
   "license": "MIT",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "url": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins"
   }
