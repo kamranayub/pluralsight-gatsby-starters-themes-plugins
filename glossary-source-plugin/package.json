@@ -1,0 +1,22 @@
+{
+  "name": "@kamranayub/gatsby-source-globomantics-glossary",
+  "version": "0.1.0-pr-4.0",
+  "description": "A sample source plugin for the Globomantics Glossary API",
+  "main": "index.js",
+  "repository": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "author": "Kamran Ayub",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
