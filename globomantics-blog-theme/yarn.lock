@@ -1608,23 +1608,6 @@
   dependencies:
     node-fetch "^2.6.1"
 
-"@kamranayub/gatsby-theme-globomantics-blog@^1.0.0":
-  version "1.0.0-pr-8.1"
-  dependencies:
-    "@kamranayub/gatsby-source-globomantics-glossary" "1.0.0"
-    "@kamranayub/gatsby-transformer-globomantics-glossary" "1.0.0"
-    gatsby "^3.3.0"
-    gatsby-plugin-image "^1.2.1"
-    gatsby-plugin-react-helmet "^4.2.0"
-    gatsby-plugin-sharp "^3.2.1"
-    gatsby-source-contentful "^5.2.1"
-    gatsby-transformer-remark "^3.2.0"
-    gatsby-transformer-sharp "^3.2.0"
-    lodash "^4.17.21"
-    react "^17.0.2"
-    react-dom "^17.0.2"
-    react-helmet "^6.1.0"
-
 "@kamranayub/gatsby-transformer-globomantics-glossary@1.0.0":
   version "1.0.0"
   resolved "https://npm.pkg.github.com/download/@kamranayub/gatsby-transformer-globomantics-glossary/1.0.0/552cdfaa5dc170ba5c93bef4b35f792fe51e55f7013de3007732dfb2a3cc1992#b5453e2ee1bb32e2f1106f533b96cb218d44dacb"
