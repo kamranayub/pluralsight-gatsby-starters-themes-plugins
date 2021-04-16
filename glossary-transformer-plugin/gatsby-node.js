@@ -38,7 +38,7 @@ exports.onCreateNode = async ({
       const termMatches = [...content.matchAll(termMatcher)];
 
       if (termMatches.length) {
-        return { term___NODE: term.id, count: termMatches.length };
+        return { term: term.id, count: termMatches.length };
       } else {
         return false;
       }
@@ -50,6 +50,8 @@ exports.onCreateNode = async ({
   const termReferencesNode = {
     id: createNodeId(`${node.id} ${GLOSSARY_REFS_NODE_TYPE}`),
     terms: termReferences,
+    parent: node.id,
+    children: [],
     internal: {
       contentDigest: createContentDigest(termReferences),
       type: GLOSSARY_REFS_NODE_TYPE,
@@ -74,7 +76,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type GlossaryTermRef {
-      term: GlossaryTerm!
+      term: GlossaryTerm! @link(by: "id", from: "term")
       count: Int!
     }
   `);
