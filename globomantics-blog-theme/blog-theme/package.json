@@ -9,7 +9,6 @@
   "dependencies": {
     "@kamranayub/gatsby-source-globomantics-glossary": "1.0.0",
     "@kamranayub/gatsby-transformer-globomantics-glossary": "1.0.0",
-    "gatsby": "^3.3.0",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-react-helmet": "^4.2.0",
     "gatsby-plugin-sharp": "^3.2.1",
@@ -24,6 +23,9 @@
   "devDependencies": {
     "contentful-import": "^7.8.6",
     "netlify-cli": "^2.54.0"
+  },
+  "peerDependencies": {
+    "gatsby": ">= 3"
   },
   "engines": {
     "node": ">=14"
