@@ -24,15 +24,19 @@ const SignInButton = () => (
       Sign-in
     </a>
   </div>
-)
+);
 
-export default () => (
-  <div className={styles.wrapper}>
+export default ({
+  tagline = "ENGINEERING BLOGS",
+  className = "",
+  children,
+}) => (
+  <div className={`${styles.wrapper} ${className}`}>
     <Container className={styles.header}>
       <Link to="/" className={styles.logo}>
         <img src={logo} alt="logo" />
       </Link>
-      <span className={styles.tagline}>ENGINEERING BLOGS</span>
+      <span className={styles.tagline}>{tagline}</span>
       <div className={styles.middle}>
         <Search />
         <Navigation className={styles.navigation} />
@@ -41,6 +45,7 @@ export default () => (
         <Divider />
         <SignInButton />
       </div>
+      {children}
     </Container>
   </div>
-)
+);
