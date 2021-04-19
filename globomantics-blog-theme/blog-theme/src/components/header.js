@@ -8,14 +8,14 @@ import avatar from './avatar.svg'
 
 const Search = () => (
   <div className={styles.search}>
-    <button type="submit">
-      <i className="fa fa-search"></i>
-    </button>
+    <button type="submit"><i className="fa fa-search"></i></button>
     <input type="text" placeholder="Search" />
   </div>
-);
+)
 
-const Divider = () => <div className={styles.divider}></div>;
+const Divider = () => (
+  <div className={styles.divider}></div>
+)
 
 const SignInButton = () => (
   <div className={styles.signInButton}>
