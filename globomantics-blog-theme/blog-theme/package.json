@@ -36,7 +36,7 @@
     "gatsby-theme",
     "gatsby-plugin"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

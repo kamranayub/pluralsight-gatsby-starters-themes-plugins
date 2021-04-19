@@ -10,7 +10,7 @@ We can copy the `build` script and modify it to execute the `dev` command in the
   "private": true,
   "version": "0.0.1",
   "main": "index.js",
-  "license": "0BSD",
+  "license": "Apache-2.0",
   "scripts": {
 +   "dev": "yarn workspace example dev",
     "build": "yarn workspace example build"
