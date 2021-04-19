@@ -1,0 +1,42 @@
+{
+  "name": "@kamranayub/gatsby-theme-globomantics-blog",
+  "description": "Globomantics Gatsby Blog Theme",
+  "version": "1.0.0",
+  "author": "Kamran Ayub (@kamranayub)",
+  "bugs": {
+    "url": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins/issues"
+  },
+  "dependencies": {
+    "@kamranayub/gatsby-source-globomantics-glossary": "1.0.0",
+    "@kamranayub/gatsby-transformer-globomantics-glossary": "1.0.0",
+    "gatsby": "^3.3.0",
+    "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-sharp": "^3.2.1",
+    "gatsby-source-contentful": "^5.2.1",
+    "gatsby-transformer-remark": "^3.2.0",
+    "gatsby-transformer-sharp": "^3.2.0",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "contentful-import": "^7.8.6",
+    "netlify-cli": "^2.54.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "homepage": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins"
+  }
+}
