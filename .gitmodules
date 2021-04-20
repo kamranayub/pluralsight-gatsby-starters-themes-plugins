@@ -1,0 +1,4 @@
+[submodule "pluralsight-gatsby-demo-starter"]
+	path = pluralsight-gatsby-demo-starter
+	url = https://github.com/kamranayub/pluralsight-gatsby-demo-starter
+	branch = module-5-transformer-plugin
