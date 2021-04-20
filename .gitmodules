@@ -1,4 +1,8 @@
-[submodule "pluralsight-gatsby-demo-starter"]
-	path = pluralsight-gatsby-demo-starter
+[submodule "notheme-starter"]
+	path = notheme-starter
 	url = https://github.com/kamranayub/pluralsight-gatsby-demo-starter
 	branch = module-5-transformer-plugin
+[submodule "theme-starter"]
+	path = theme-starter
+	url = https://github.com/kamranayub/pluralsight-gatsby-demo-starter
+	branch = main
