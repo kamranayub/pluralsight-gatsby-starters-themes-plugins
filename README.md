@@ -1,13 +1,8 @@
 # Creating Plugins, Themes and Starters with GatsbyJS: Playbook Pluralsight Course
 
-> **IMPORTANT:** For the latest version of these materials, see: https://github.com/kamranayub/pluralsight-gatsby-starters-themes-plugins
+This repository is for the Pluralsight course [Creating Plugins, Themes and Starters with GatsbyJS: Playbook](http://bit.ly/PSCustomizingGatsby). The license is Apache 2.0.
 
-## Table of Contents
-
-1. [Where to Start](#where-to-start)
-1. [Errata](#errata)
-1. [Updates](#updates)
-1. [Additional Resources](#additional-resources)
+<!-- ![Course overview screenshot](#todo) -->
 
 ## Where to Start
 
