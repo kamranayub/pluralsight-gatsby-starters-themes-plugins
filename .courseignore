@@ -1,0 +1,7 @@
+node_modules
+.materials
+.git
+.github
+.vscode
+.cache
+public
