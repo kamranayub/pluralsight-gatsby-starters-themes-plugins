@@ -2,7 +2,7 @@
 
 This repository is for the Pluralsight course [Creating Plugins, Themes and Starters with GatsbyJS: Playbook](http://bit.ly/PSCustomizingGatsby). The license is Apache 2.0.
 
-<!-- ![Course overview screenshot](#todo) -->
+[![Course overview](https://user-images.githubusercontent.com/563819/115808029-4d838000-a3af-11eb-9b53-459815f3069d.png)](http://bit.ly/PSCustomizingGatsby)
 
 ## Where to Start
 
